@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import HomePage from "../pages/HomePage";
-import SearchPage from "../pages/SearchPage";
+import SearchPage from "../pages/search/SearchPage";
 import PackageDetailsPage from "../pages/PackageDetailsPage";
+import { searchLoader } from "../pages/search/searchLoader";
 
 const router = createBrowserRouter([
   {
@@ -13,9 +14,7 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <SearchPage />,
-        loader: () => {
-          return ["react", "react-redux", "redux"];
-        },
+        loader: searchLoader,
       },
       { path: "packages/:name", element: <PackageDetailsPage /> },
     ],
