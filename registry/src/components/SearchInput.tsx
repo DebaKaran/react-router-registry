@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import React, { useState } from "react";
+// import {  useNavigate } from "react-router-dom";
+
+import { Form } from "react-router-dom";
 
 const SearchInput = () => {
-  const [term, setTerm] = useState("");
+  /**const [term, setTerm] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -14,6 +16,12 @@ const SearchInput = () => {
     <form onSubmit={handleSubmit}>
       <input value={term} onChange={(e) => setTerm(e.target.value)} />
     </form>
+  ); */
+
+  return (
+    <Form action="/search">
+      <input name="term" />
+    </Form>
   );
 };
 
