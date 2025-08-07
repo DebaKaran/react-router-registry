@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "../../configs/config";
 import type { PackageSummary } from "../types/packageSummary";
 
 interface SearchResponse {
@@ -14,9 +15,7 @@ interface SearchResponse {
 }
 
 export async function searchPackages(term: string): Promise<PackageSummary[]> {
-  const res = await fetch(
-    `https://registry.npmjs.org/-/v1/search?text=${term}`
-  );
+  const res = await fetch(`${API_BASE_URL}/-/v1/search?text=${term}`);
 
   const data: SearchResponse = await res.json();
 
